@@ -6,14 +6,16 @@
     <title>Bhagwad Gita</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<header>
-    <h1>Bhagwad Gita</h1>
-    <p>Welcome to the online Bhagwad Gita. Please select a page to begin reading.</p>
-</header>
-
 <body>
-    <div id="navigation"></div>
-    <div id="app">Welcome to the Bhagwad Gita</div>
+    <header>
+        <h1>Bhagwad Gita</h1>
+        <p>Welcome to the Bhagwad Gita. Please select a page to begin reading.</p>
+    </header>
+
+    <div class="nav-arrow" id="prev-arrow">Previous</div>
+    <div class="nav-arrow" id="next-arrow">Next</div>
+    <div id="content-area"></div>
+
     <script src="app.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
