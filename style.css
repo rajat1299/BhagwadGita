@@ -1,0 +1,19 @@
+/* style.css */
+#navigation {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.chapter-link {
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+}
+
+.chapter-link:hover {
+    background-color: #ddd;
+}
