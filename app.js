@@ -1,21 +1,40 @@
 // app.js
 
-document.addEventListener('DOMContentLoaded', (event) => {
+let currentPage = 25; // Start from the first page
+
+function loadPage(pageNumber) {
+    // Assuming the content of each page is in a separate .html file under the 'pages' directory
+    const pagePath = `pages/Bhagavad-gita-Swami-BG-Narasingha_Page_${pageNumber}.html`;
+
+    fetch(pagePath)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('content-area').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading page:', error));
+}
+
+function setupNavigation() {
+    document.getElementById('prev-arrow').addEventListener('click', () => {
+        if (currentPage > 25) { // Check for lower bound
+            currentPage--;
+            loadPage(currentPage);
+        }
+    });
+
+    document.getElementById('next-arrow').addEventListener('click', () => {
+        if (currentPage < 592) { // Check for upper bound
+            currentPage++;
+            loadPage(currentPage);
+        }
+    });
+}
+
+// This single event listener is sufficient to initialize both functions
+document.addEventListener('DOMContentLoaded', () => {
     console.log('Bhagwad Gita App is loaded and ready!');
-    generateNavigation(); // Call generateNavigation function here
+    loadPage(currentPage); // Load the initial page
+    setupNavigation(); // Setup navigation arrows
 });
 
-function generateNavigation() {
-    const navContainer = document.getElementById('navigation');
-    // Start from 25 to 592 according to your file numbering
-    for (let i = 25; i <= 592; i++) {
-        const pageNumber = i.toString().padStart(3, '0'); // Ensure the page number has three digits
-        const chapterPath = `Bhagavad-gita-Swami-BG-Narasingha_Page_${pageNumber}.html`;
-        const link = document.createElement('a');
-        link.href = chapterPath;
-        link.textContent = `Page ${pageNumber}`; // Text content of the link
-        link.classList.add('chapter-link'); // Add CSS class for styling
-        navContainer.appendChild(link);
-    }
-}
 
