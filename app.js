@@ -3,16 +3,25 @@
 let currentPage = 25; // Start from the first page
 
 function loadPage(pageNumber) {
-    // Assuming the content of each page is in a separate .html file under the 'pages' directory
-    const pagePath = `Bhagavad-gita-Swami-BG-Narasingha_Page_${pageNumber}.html`;
-
+    // Ensure the page number has three digits, as in your file names
+    const formattedPageNumber = pageNumber.toString().padStart(3, '0');
+    const pagePath = `Bhagavad-gita-Swami-BG-Narasingha_Page_${formattedPageNumber}.html`;
 
     fetch(pagePath)
-        .then(response => response.text())
+        .then(response => {
+            // Check if the response is ok (status 200)
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.text();
+        })
         .then(data => {
             document.getElementById('content-area').innerHTML = data;
         })
-        .catch(error => console.error('Error loading page:', error));
+        .catch(error => {
+            console.error('Error loading page:', error);
+            document.getElementById('content-area').innerHTML = '<p>Error loading page content.</p>';
+        });
 }
 
 function setupNavigation() {
