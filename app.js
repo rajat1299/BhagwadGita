@@ -4,7 +4,8 @@ let currentPage = 25; // Start from the first page
 
 function loadPage(pageNumber) {
     // Assuming the content of each page is in a separate .html file under the 'pages' directory
-    const pagePath = `pages/Bhagavad-gita-Swami-BG-Narasingha_Page_${pageNumber}.html`;
+    const pagePath = `Bhagavad-gita-Swami-BG-Narasingha_Page_${pageNumber}.html`;
+
 
     fetch(pagePath)
         .then(response => response.text())
