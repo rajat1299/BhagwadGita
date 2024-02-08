@@ -1,31 +1,71 @@
-#navigation {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 10px;
-    padding: 20px;
-    max-width: 1000px;
+body {
+    font-family: 'Open Sans', sans-serif; /* Example font */
+    background-color: #fff; /* Light mode */
+    color: #333;
+    line-height: 1.6;
+    max-width: 800px; /* Width of the text container */
     margin: 0 auto;
+    padding: 20px;
 }
 
-.chapter-link {
-    background: #f2f2f2;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
+header {
     text-align: center;
+    margin-bottom: 50px; /* Space before content starts */
+}
+
+#navigation {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style for dropdown or pagination here */
+/* ... */
+
+/* Style for content area */
+.content-area {
+    background-color: #f9f9f9; /* Slightly off-white background */
+    padding: 30px;
+    border-radius: 5px;
+}
+
+/* Example class for navigation arrows */
+.nav-arrow {
+    font-size: 24px; /* Large tap targets for arrows */
+    padding: 10px;
+    margin: 0 15px;
     text-decoration: none;
     color: #333;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+    display: inline-block;
 }
 
-.chapter-link:hover {
-    background-color: #ddd;
+.nav-arrow:
+    cursor: pointer;
+.nav-arrow:  hover {
+    color: #666; /* Feedback on hover */
 }
 
-@media (max-width: 600px) {
-    .chapter-link {
-        padding: 8px;
-        font-size: 0.9rem;
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+    .content-area {
+        padding: 20px;
     }
+
+    /* Adjust font sizes and navigation for smaller screens */
+    /* ... */
 }
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #ddd;
+    }
+
+    .content-area {
+        background-color: #333;
+    }
+
+    /* Other dark mode adjustments */
+    /* ... */
+}
+
