@@ -1,19 +1,31 @@
-/* style.css */
 #navigation {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .chapter-link {
-    padding: 5px 10px;
-    margin: 5px;
-    background-color: #f0f0f0;
+    background: #f2f2f2;
+    border: none;
+    padding: 10px;
     border-radius: 5px;
+    text-align: center;
     text-decoration: none;
     color: #333;
+    font-size: 1rem;
+    transition: background-color 0.3s;
 }
 
 .chapter-link:hover {
     background-color: #ddd;
+}
+
+@media (max-width: 600px) {
+    .chapter-link {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
 }
