@@ -44,6 +44,60 @@ header {
     color: #666; /* Feedback on hover */
 }
 
+#search-area {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#search-input {
+    padding: 8px;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+#search-button {
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#annotations-area {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#annotation-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    min-height: 100px;
+    font-size: 16px;
+    box-sizing: border-box; /* So the width includes padding */
+}
+
+#save-annotation {
+    padding: 8px 15px;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.read {
+    background-color: #d3d3d3; /* or any color that indicates completion */
+}
+
+/* Add the 'read' class to page links when they're marked as read */
+#daily-verse-area {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#daily-verse {
+    font-style: italic;
+    margin: 20px 0;
+}
+
 /* Add media queries for responsiveness */
 @media (max-width: 768px) {
     .content-area {
